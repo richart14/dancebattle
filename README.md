@@ -26,3 +26,14 @@ The page itself should be responsive. I didn't have the ability to see the png f
 2. Write a function that takes a search parameter string as input, and outputs an array of matching songs
 3. Assume that you have an array of song objects locally, and that you do not have to make a database call to receive the object
 4. Only display results when the search parameter has 2 or more characters in the input
+
+The algorithm is found in `searchAlg.js`. The following block of code is the function itself. 
+```
+const songSearch = (searchTerm, songArray) => {
+  let result = [];
+  const re = new RegExp(`.*${searchTerm}.*`, 'i');
+  songArray.forEach(song => re.test(song.title) ? result.push(song) : '');
+  return result;
+}
+```
+The time complexity is O(n). It loops through the songArray once matching the song title to the regular expression that contains the search term. Display validation is done in the component itself. 
