@@ -18,7 +18,7 @@
 4. In the center of the top right quadrant, display the text “dance”
 5. In the center of the bottom left quadrant, display the text “battle”
 
-The page itself should be responsive. I didn't have the ability to see the png file so I just assumed it was a 4 quadrant with red backgrounds on each of the given parts.
+The page itself should be responsive. I didn't have the ability to see the png file so I just assumed it was a 4 quadrant with red backgrounds on each of the given parts. 
 
 #### Algorithms Problem
 
@@ -36,4 +36,4 @@ const songSearch = (searchTerm, songArray) => {
   return result;
 }
 ```
-The time complexity is O(n). It loops through the songArray once matching the song title to the regular expression that contains the search term. Display validation is done in the component itself. 
+The time complexity is O(n). It loops through the songArray once matching the song title to the regular expression that contains the search term. Display validation is done in the component itself. I added the algorithm search display on the red parts of the quadrants since I wasn't sure to put it on a completely different page or something along those lines. 
