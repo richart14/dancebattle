@@ -1,4 +1,4 @@
-.App * {
+.App > * {
   position: absolute;
 }
 
@@ -40,4 +40,13 @@ span {
   resize: none;
   height: 80%;
   transform: translate(10%, 10%);
+}
+
+.searchForm {
+  width: 80%;
+  height: 80%;
+  transform: translate(10%, 10%);
+  border: 1px solid black;
+}
+.searchForm * {
 }

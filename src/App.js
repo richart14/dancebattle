@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SongInput from './songInput';
+import SearchSong from './searchSongs';
 
 class App extends Component {
   constructor() {
@@ -46,7 +47,7 @@ class App extends Component {
         <div className="top left red"><SongInput handleSongs={(songString) => this.handleSongs(songString)} songs={this.state.songs}/></div>
         <div className="top right words"><span>Dance</span></div>
         <div className="bottom left words"><span>Battle</span></div>
-        <div className="bottom right red"></div>
+        <div className="bottom right red"><SearchSong /></div>
       </div>
     );
   }
