@@ -45,8 +45,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="top left red"><SongInput handleSongs={this.handleSongs} songs={this.state.songs}/></div>
-        <div className="top right"><span>Dance</span></div>
-        <div className="bottom left"><span>Battle</span></div>
+        <div className="top right words"><span>Dance</span></div>
+        <div className="bottom left words"><span>Battle</span></div>
         <div className="bottom right red"></div>
       </div>
     );
