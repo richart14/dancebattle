@@ -28,6 +28,10 @@
   text-align: center;
 }
 
+textarea {
+  resize: none;
+}
+
 span {
   position: absolute;
   top: 50%;
@@ -37,7 +41,6 @@ span {
 
 .songInput {
   width: 80%;
-  resize: none;
   height: 80%;
   transform: translate(10%, 10%);
 }
@@ -46,11 +49,18 @@ span {
   width: 80%;
   height: 80%;
   transform: translate(10%, 10%);
-  border: 1px solid black;
 }
-.searchForm * {
+.searchForm > * {
   display: block;
   width: 80%;
   margin: auto;
-  height: 33%;
+}
+
+.searchInput {
+  height: 20%;
+  font-size: 15px;
+}
+
+.searchForm > textarea {
+  height: 60%;
 }

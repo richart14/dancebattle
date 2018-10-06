@@ -3,13 +3,13 @@ import {songSearch} from './searchAlg';
 const SearchSongs = props => {
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target.searchInput.value);
-    songSearch(e.target.searchInput.value, props.songsArray)
+    let searchResults = songSearch(e.target.searchInput.value, props.songsArray)
+    props.handleSearch(JSON.stringify(searchResults));
   }
-  
+
   return (
     <form className="searchForm" onSubmit={e => handleSubmit(e)}>
-      <input name="searchInput" type="text"></input>
+      <input className="searchInput" name="searchInput" type="text"></input>
       <button type="submit">Search!</button>
       <textarea type="text" value={props.songs} disabled/>
     </form>

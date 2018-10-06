@@ -35,19 +35,35 @@ class App extends Component {
           duration:"4:13"
         }
       ]),
+      searchSongs: ''
     }
   }
 
   handleSongs(songString) {
     this.setState({songs: songString})
   }
+
+  handleSearch(searchSongString) {
+    this.setState({searchSongs: searchSongString})
+  }
   render() {
     return (
       <div className="App">
-        <div className="top left red"><SongInput handleSongs={(songString) => this.handleSongs(songString)} songs={this.state.songs}/></div>
+        <div className="top left red">
+          <SongInput 
+            handleSongs={songString => this.handleSongs(songString)} 
+            songs={this.state.songs}
+          />
+        </div>
         <div className="top right words"><span>Dance</span></div>
         <div className="bottom left words"><span>Battle</span></div>
-        <div className="bottom right red"><SearchSong songsArray={JSON.parse(this.state.songs)}/></div>
+        <div className="bottom right red">
+          <SearchSong 
+            handleSearch={searchSongString => this.handleSearch(searchSongString)} 
+            songsArray={JSON.parse(this.state.songs)} 
+            songs={this.state.searchSongs}
+          />
+        </div>
       </div>
     );
   }
