@@ -47,7 +47,7 @@ class App extends Component {
         <div className="top left red"><SongInput handleSongs={(songString) => this.handleSongs(songString)} songs={this.state.songs}/></div>
         <div className="top right words"><span>Dance</span></div>
         <div className="bottom left words"><span>Battle</span></div>
-        <div className="bottom right red"><SearchSong /></div>
+        <div className="bottom right red"><SearchSong songsArray={JSON.parse(this.state.songs)}/></div>
       </div>
     );
   }

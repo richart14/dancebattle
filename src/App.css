@@ -49,4 +49,8 @@ span {
   border: 1px solid black;
 }
 .searchForm * {
+  display: block;
+  width: 80%;
+  margin: auto;
+  height: 33%;
 }
