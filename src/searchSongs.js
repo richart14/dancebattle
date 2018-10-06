@@ -4,7 +4,11 @@ const SearchSongs = props => {
   const handleSubmit = e => {
     e.preventDefault();
     let searchResults = songSearch(e.target.searchInput.value, props.songsArray)
-    props.handleSearch(JSON.stringify(searchResults));
+    if (e.target.searchInput.value.length < 3) {
+      props.handleSearch('Need more than 2 characters!');
+    } else {
+      props.handleSearch(JSON.stringify(searchResults));
+    }
   }
 
   return (
