@@ -6,8 +6,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="top left red"></div>
-        <div className="top right">Dance</div>
-        <div className="bottom left">Battle</div>
+        <div className="top right"><span>Dance</span></div>
+        <div className="bottom left"><span>Battle</span></div>
         <div className="bottom right red"></div>
       </div>
     );
