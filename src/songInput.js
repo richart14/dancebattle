@@ -1,10 +1,17 @@
 import React from 'react';
 
-const handleSongs = (e) => {
 
-}
 const songInput = props => {
-  return <textarea className='songInput' onChange={e => props.handleSongs(e.target.value)} value={JSON.stringify(props.songs)} disabled/>
+  const handleChange = (e) => {
+    props.handleSongs(e.target.value);
+  }
+  return (
+    <textarea 
+      className='songInput' 
+      onChange={e => handleChange(e)} 
+      value={props.songs}
+    />
+  )
 }
 
 export default songInput;

@@ -7,7 +7,7 @@ class App extends Component {
     super()
 
     this.state = {
-      songs: [
+      songs: JSON.stringify([
         {
           artist: "Maroon 5 Featuring Cardi B",
           title: "Girls Like You",
@@ -33,18 +33,17 @@ class App extends Component {
           title: "KillShot",
           duration:"4:13"
         }
-      ],
+      ]),
     }
   }
 
-  handleSongs(songArray) {
-    // this.setState({songs: songArray})
-    console.log(songArray)
+  handleSongs(songString) {
+    this.setState({songs: songString})
   }
   render() {
     return (
       <div className="App">
-        <div className="top left red"><SongInput handleSongs={this.handleSongs} songs={this.state.songs}/></div>
+        <div className="top left red"><SongInput handleSongs={(songString) => this.handleSongs(songString)} songs={this.state.songs}/></div>
         <div className="top right words"><span>Dance</span></div>
         <div className="bottom left words"><span>Battle</span></div>
         <div className="bottom right red"></div>
