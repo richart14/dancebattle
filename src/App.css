@@ -64,3 +64,11 @@ span {
 .searchForm > textarea {
   height: 60%;
 }
+
+.response {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -10,7 +10,7 @@ const songInput = props => {
       className='songInput' 
       onChange={e => handleChange(e)} 
       value={props.songs}
-      disabled
+      // disabled
     />
   )
 }

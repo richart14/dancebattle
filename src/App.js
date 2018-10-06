@@ -47,6 +47,25 @@ class App extends Component {
     this.setState({searchSongs: searchSongString})
   }
   render() {
+    let response;
+    let responseStyle = '';
+    try {
+      response = (
+      <SearchSong 
+        handleSearch={searchSongString => this.handleSearch(searchSongString)} 
+        songsArray={JSON.parse(this.state.songs)} 
+        songs={this.state.searchSongs}
+      />
+      )
+      if (!Array.isArray(JSON.parse(this.state.songs))){
+        //eslint-disable-next-line
+        throw 'not an array!';
+      }
+    }
+    catch(e) {
+      response = (<div className="response">The input needs to be an array of song objects!</div>)
+      responseStyle = 'words';
+    }
     return (
       <div className="App">
         <div className="top left red">
@@ -57,12 +76,8 @@ class App extends Component {
         </div>
         <div className="top right words"><span>Dance</span></div>
         <div className="bottom left words"><span>Battle</span></div>
-        <div className="bottom right red">
-          <SearchSong 
-            handleSearch={searchSongString => this.handleSearch(searchSongString)} 
-            songsArray={JSON.parse(this.state.songs)} 
-            songs={this.state.searchSongs}
-          />
+        <div className={`bottom right red ${responseStyle}`}>
+          {response}
         </div>
       </div>
     );
